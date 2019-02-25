@@ -1,3 +1,12 @@
+bookdown::pdf_book:
+  latex_engine: "xelatex"
+  keep_tex: true
+  includes:
+    in_header: latex/header.tex #latex/preamble.tex
+    after_body: latex/after_body.tex
+  quote_footer: ["\\hspace*{\\fill} ", ""]
+  highlight_bw: true # Code to gray scale
+
 bookdown::gitbook:
   css: css/style.css
   config:
@@ -13,11 +22,14 @@ bookdown::gitbook:
       link: https://github.com/Robinlovelace/geocompr/edit/master/%s
       text: "Edit"
   includes:
-    in_header: ga.html
+#    in_header: ga.html
     after_body: after-body.html
-bookdown::html_chapters:
-  css: [css/style.css, css/toc.css]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-keep_tex: yes
+#bookdown::html_chapters:
+#  css: [css/style.css, css/toc.css]
+
+
+#bookdown::pdf_book:
+#  includes:
+#    in_header: preamble.tex
+#keep_tex: yes
+
