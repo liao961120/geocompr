@@ -263,7 +263,6 @@ od_top5 %>%
     caption = paste("Sample of the origin-destination data stored in the data",
                     "frame object `bristol_od`. These represent the top 5 most", 
                     "common desire lines between zones in the study area."),
-    short.caption = "Sample of the origin-destination data.",
     booktabs = TRUE)
 ```
 
