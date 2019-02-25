@@ -24,6 +24,9 @@ install:
   - R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
   - R -e "devtools::install_github('geocompr/geocompkg')"
 
+script:
+  - echo 'skip R CMD check'
+
 #script:
 after_success:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
