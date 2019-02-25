@@ -4,7 +4,7 @@ author: 'Robin Lovelace, Jakub Nowosad, Jannes Muenchow'
 date: '`r Sys.Date()`'
 knit: bookdown::render_book
 site: bookdown::bookdown_site
-documentclass: krantz
+documentclass: book
 lot: yes
 lof: yes
 monofont: "Source Code Pro"
