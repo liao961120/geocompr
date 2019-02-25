@@ -1,0 +1,12 @@
+Package: placeholder
+Title: placeholder
+Version: 1.0.0.9000
+Authors@R: c(
+  person("placeholder", "placeholder", , "placeholder@rstudio.com", c("aut", "cre"))
+  )
+URL: https://github.com/hadley/adv-r
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    bookdown,
+    tidyverse
