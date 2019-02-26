@@ -31,7 +31,7 @@ always_allow_html: yes
 is_on_travis = identical(Sys.getenv("TRAVIS"), "true")
 is_online = curl::has_internet()
 ```
-
+<!--
 # Welcome {-}
 
 This is the online home of *Geocomputation with R*, a book on geographic data analysis, visualization and modeling.
@@ -78,8 +78,6 @@ bookdown::render_book("index.Rmd") # to build the book
 browseURL("_book/index.html") # to view it
 ```
 
-<!-- suggested content on if you find the book useful but this intro is already quite long (RL)-->
-
 ## Supporting the project {-}
 
 If you find the book useful, please support it by:
@@ -92,6 +90,8 @@ If you find the book useful, please support it by:
 Further details can be found at [github.com/Robinlovelace/geocompr](https://github.com/Robinlovelace/geocompr#geocomputation-with-r).
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+-->
 
 # Foreword {-}
 
@@ -202,6 +202,7 @@ On the other hand, we embed the shown methods into the bigger field of GIScience
 
 -->
 
+<!--
 ## Acknowledgements {-}
 
 ```{r contrib-preface, include=FALSE}
@@ -231,3 +232,4 @@ The final thank you is for all the software developers who make geocomputation w
 Edzer Pebesma (who created the **sf** package), Robert Hijmans (who created **raster**) and Roger Bivand (who laid the foundations for much R-spatial software) have made high performance geographic computing possible in R.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+-->
