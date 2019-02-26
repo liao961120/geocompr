@@ -10,14 +10,14 @@ before_install:
   - sudo apt-get --yes --force-yes update -qq
   - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev libv8-dev
   - sudo apt-get install --yes libjq-dev libprotobuf-dev libprotoc-dev protobuf-compiler r-cran-ncdf4
-  - sudo apt-get install texlive-latex-base
-  - sudo apt-get install texlive-fonts-recommended
-  - sudo apt-get install texlive-xetex
-  - sudo apt-get install texlive-fonts-extra
-  - sudo $(which tlmgr) install index unicode-math filehook lm-math babel-english idxlayout newunicodechar natbib threeparttablex makecell
-  - sudo apt-get install pdftk
-  - sudo apt-get install fonts-inconsolata -y
-  - sudo fc-cache -fv
+#  - sudo apt-get install texlive-latex-base
+#  - sudo apt-get install texlive-fonts-recommended
+#  - sudo apt-get install texlive-xetex
+#  - sudo apt-get install texlive-fonts-extra
+#  - sudo $(which tlmgr) install index unicode-math filehook lm-math babel-english idxlayout newunicodechar natbib threeparttablex makecell
+#  - sudo apt-get install pdftk
+#  - sudo apt-get install fonts-inconsolata -y
+#  - sudo fc-cache -fv
   
 install:
   - R -e "install.packages('devtools')"
@@ -30,7 +30,8 @@ script:
 
 #script:
 after_success:
-  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
+  - cp -r figures figures-ori
+#  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
   - bash pagedown.sh
 #  - mv _main.tex _book
@@ -52,11 +53,11 @@ deploy:
     keep-history: false
     on:
       branch: master
-  - provider: pages
-    target-branch: travis-compiled
-    skip-cleanup: true
-    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
-    keep-history: false
-    on:
-      branch: master
+#  - provider: pages
+#    target-branch: travis-compiled
+#    skip-cleanup: true
+#    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
+#    keep-history: false
+#    on:
+#      branch: master
 

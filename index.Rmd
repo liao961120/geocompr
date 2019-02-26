@@ -5,8 +5,8 @@ date: '`r Sys.Date()`'
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: krantz
-lot: no
-lof: no
+lot: false
+lof: false
 geometry: b5paper, bottom=0.72in
 subparagraph: yes
 linestretch: 1.15
