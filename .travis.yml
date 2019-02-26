@@ -14,7 +14,7 @@ before_install:
   - sudo apt-get install texlive-fonts-recommended
   - sudo apt-get install texlive-xetex
   - sudo apt-get install texlive-fonts-extra
-  - sudo $(which tlmgr) install index unicode-math filehook lm-math babel-english idxlayout newunicodechar natbib threeparttablex
+  - sudo $(which tlmgr) install index unicode-math filehook lm-math babel-english idxlayout newunicodechar natbib threeparttablex makecell
   - sudo apt-get install pdftk
   - sudo apt-get install fonts-inconsolata -y
   - sudo fc-cache -fv
@@ -44,7 +44,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
-  keep-history: true
+  keep-history: false
   local-dir: _book # Book output directory
   on:
     branch: master
