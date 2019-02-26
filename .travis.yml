@@ -32,6 +32,7 @@ script:
 after_success:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
+  - bash pagedown.sh
 #  - mv _main.tex _book
 
 #after_success:
