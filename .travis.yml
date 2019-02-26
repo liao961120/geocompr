@@ -30,6 +30,7 @@ script:
 #script:
 after_success:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
+  - mv _main.tex _book
 
 #after_success:
 #  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
