@@ -566,7 +566,12 @@ source("https://github.com/Robinlovelace/geocompr/raw/master/code/08-uscolonize.
 
 ```{r animus, echo=FALSE, message=FALSE, fig.cap="Animated map showing population growth, state formation and boundary changes in the United States, 1790-2010. Animated version available online at geocompr.robinlovelace.net.", fig.scap="Animated map showing boundary changes in the United States."}
 u_animus = "https://user-images.githubusercontent.com/1825120/38543030-5794b6f0-3c9b-11e8-9da9-10ec1f3ea726.gif"
-knitr::include_graphics(u_animus)
+if (knitr:::is_latex_output()) {
+  knitr::asis_output('\\url{....}')
+} else {
+  knitr::include_graphics(u_animus)
+}
+
 ```
 
 ## Interactive maps
