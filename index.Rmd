@@ -5,8 +5,14 @@ date: '`r Sys.Date()`'
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: krantz
-lot: yes
-lof: yes
+lot: no
+lof: no
+geometry: b5paper, bottom=0.72in
+subparagraph: yes
+linestretch: 1.15
+indent: true
+links-to-footnotes: true # option for pagedown
+paged-footnotes: true    # option for pagedown
 #monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 bibliography:
