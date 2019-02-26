@@ -522,7 +522,11 @@ Figure \@ref(fig:urban-animated) is a simple example of an animated map.
 Unlike the faceted plot, it does not squeeze multiple maps into a single screen and allows the reader to see how the spatial distribution of the world's most populous agglomerations evolve over time (see the book's website for the animated version).
 
 ```{r urban-animated, message=FALSE, fig.cap="Animated map showing the top 30 largest urban agglomerations from 1950 to 2030 based on population projects by the United Nations. Animated version available online at: geocompr.robinlovelace.net.", , fig.scap="Animated map showing the top 30 largest 'urban agglomerations'.", echo=FALSE}
-knitr::include_graphics("figures/urban-animated.gif")
+if (knitr:::is_latex_output()) {
+  knitr::asis_output('\\url{....}')
+} else {
+  knitr::include_graphics("figures/urban-animated.gif")
+}
 ```
 
 ```{r 08-mapping-21, echo=FALSE, eval=FALSE}
