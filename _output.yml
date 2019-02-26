@@ -24,6 +24,13 @@ bookdown::gitbook:
   includes:
 #    in_header: ga.html
     after_body: after-body.html
+
+pagedown::book_crc:
+  toc: true
+  number_sections: true
+  self_contained: false
+  pandoc_args: "--mathjax"
+  mathjax: NULL
 #bookdown::html_chapters:
 #  css: [css/style.css, css/toc.css]
 

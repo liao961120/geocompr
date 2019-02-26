@@ -23,6 +23,7 @@ install:
   - R -e "install.packages('devtools')"
   - R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
   - R -e "devtools::install_github('geocompr/geocompkg')"
+  - R -e "devtools::install_github('rstudio/pagedown')"
 
 script:
   - echo 'skip R CMD check'
@@ -30,7 +31,8 @@ script:
 #script:
 after_success:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
-  - mv _main.tex _book
+  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
+#  - mv _main.tex _book
 
 #after_success:
 #  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
@@ -42,10 +44,10 @@ after_success:
 
 
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
-  keep-history: false
-  local-dir: _book # Book output directory
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
+    keep-history: false
+    on:
+      branch: master
+
