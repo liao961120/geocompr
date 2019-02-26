@@ -1,0 +1,14 @@
+base
+sf
+sp
+raster
+dplyr
+spData
+spDataLarge
+tmap
+leaflet
+mapview
+ggplot2
+shiny
+RColorBrewer
+cartogram

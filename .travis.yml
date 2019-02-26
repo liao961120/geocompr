@@ -1,0 +1,62 @@
+language: r
+cache: packages
+dist: trusty
+sudo: required
+pandoc_version: 2.3.1
+
+before_install:
+  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
+  - sudo add-apt-repository ppa:opencpu/jq --yes
+  - sudo apt-get --yes --force-yes update -qq
+  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev libv8-dev
+  - sudo apt-get install --yes libjq-dev libprotobuf-dev libprotoc-dev protobuf-compiler r-cran-ncdf4
+  - sudo apt-get install texlive-latex-base
+  - sudo apt-get install texlive-fonts-recommended
+  - sudo apt-get install texlive-xetex
+  - sudo apt-get install texlive-fonts-extra
+  - sudo $(which tlmgr) install index unicode-math filehook lm-math babel-english idxlayout newunicodechar natbib threeparttablex makecell
+  - sudo apt-get install pdftk
+  - sudo apt-get install fonts-inconsolata -y
+  - sudo fc-cache -fv
+  
+install:
+  - R -e "install.packages('devtools')"
+  - R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+  - R -e "devtools::install_github('geocompr/geocompkg')"
+  - R -e "devtools::install_github('rstudio/pagedown')"
+
+script:
+  - echo 'skip R CMD check'
+
+#script:
+after_success:
+  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
+  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
+  - bash pagedown.sh
+#  - mv _main.tex _book
+
+#after_success:
+#  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
+
+#notifications:
+#  email:
+#    on_success: change
+#    on_failure: change
+
+
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
+    local-dir: docs
+    keep-history: false
+    on:
+      branch: master
+  - provider: pages
+    target-branch: travis-compiled
+    skip-cleanup: true
+    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard, marked secure
+    keep-history: false
+    on:
+      branch: master
+

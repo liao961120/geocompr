@@ -1,0 +1,15 @@
+base
+sf
+sp
+raster
+reticulate
+RQGIS
+ParamHelpers
+mlr
+dplyr
+permute
+lattice
+vegan
+RColorBrewer
+latticeExtra
+tree

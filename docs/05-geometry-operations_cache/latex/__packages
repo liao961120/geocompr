@@ -1,0 +1,12 @@
+base
+sf
+sp
+raster
+dplyr
+spData
+spDataLarge
+tmap
+rcartocolor
+ggplot2
+reticulate
+RQGIS
