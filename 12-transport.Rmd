@@ -81,7 +81,9 @@ qtm(bristol_ways, lines.col = "highway", lines.lwd = 3, lines.palette = c("green
 ```
 
 ```{r bristol, echo=FALSE, fig.cap="Bristol's transport network represented by colored lines for active (green), public (railways, black) and private motor (red) modes of travel. Blue border lines represent the inner city boundary and the larger Travel To Work Area (TTWA).", fig.scap="Bristol's transport network."}
-knitr::include_graphics("https://user-images.githubusercontent.com/1825120/34452756-985267de-ed3e-11e7-9f59-fda1f3852253.png")
+temp <- tempfile()
+download.file("https://user-images.githubusercontent.com/1825120/34452756-985267de-ed3e-11e7-9f59-fda1f3852253.png", destfile = temp)
+knitr::include_graphics(temp)
 ```
 
 Bristol is the 10^th^ largest city council in England, with a population of half a million people, although its travel catchment area is larger (see Section \@ref(transport-zones)).
