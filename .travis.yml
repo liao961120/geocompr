@@ -30,7 +30,6 @@ script:
 
 #script:
 after_success:
-  - cp -r figures figures-ori
 #  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
   - bash pagedown.sh
