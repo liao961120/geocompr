@@ -1,3 +1,8 @@
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+\usepackage{framed,color}
 \usepackage{makeidx}
 \newcommand{\indexc}[1]{\index{#1@\texttt{#1}}}
 \makeindex
@@ -65,6 +70,7 @@
 
 
 % Fix \spacefactor error
+\usepackage{amsmath}
 \usepackage{amsthm}
 \makeatletter
 \def\thm@space@setup{%
