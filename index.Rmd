@@ -13,7 +13,7 @@ subparagraph: yes
 indent: true
 links-to-footnotes: true # option for pagedown
 paged-footnotes: true    # option for pagedown
-monofont: "Source Code Pro"
+#monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 bibliography:
   - refs.bib
