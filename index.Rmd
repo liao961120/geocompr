@@ -7,9 +7,9 @@ site: bookdown::bookdown_site
 documentclass: krantz
 lot: false
 lof: false
-geometry: b5paper, bottom=0.72in
-subparagraph: yes
 linestretch: 1.15
+geometry: b5paper,bottom=1.85cm,left=2.2cm,right=2.2cm,top=2cm
+subparagraph: yes
 indent: true
 links-to-footnotes: true # option for pagedown
 paged-footnotes: true    # option for pagedown
