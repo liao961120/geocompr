@@ -4,15 +4,15 @@ author: 'Robin Lovelace, Jakub Nowosad, Jannes Muenchow'
 date: '`r Sys.Date()`'
 knit: bookdown::render_book
 site: bookdown::bookdown_site
-documentclass: book #krantz
+documentclass: krantz
 lot: false
 lof: false
-linestretch: 1.15
-geometry: b5paper,bottom=1.85cm,left=2.2cm,right=2.2cm,top=2cm
-subparagraph: yes
-indent: true
-links-to-footnotes: true # option for pagedown
-paged-footnotes: true    # option for pagedown
+#linestretch: 1.15
+#geometry: b5paper,bottom=1.85cm,left=2.2cm,right=2.2cm,top=2cm
+#subparagraph: yes
+#indent: true
+#links-to-footnotes: true # option for pagedown
+#paged-footnotes: true    # option for pagedown
 #monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 bibliography:
