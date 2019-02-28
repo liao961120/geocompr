@@ -18,6 +18,6 @@ rmd_files:
     - "references.Rmd"
 new_session: yes
 before_chapter_script: ["code/before_script.R"]
-book_filename: "out"  # output HTML filename
+#book_filename: "out"  # output HTML filename
 output_dir: "docs"    # output dir, defaults to `_book`
 delete_merged_file: true

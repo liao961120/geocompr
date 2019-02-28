@@ -33,7 +33,6 @@ after_success:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
 #  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "pagedown::book_crc")'
 #  - bash pagedown.sh
-  - mv _main.tex docs/
 
 #after_success:
 #  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
