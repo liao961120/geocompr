@@ -1,4 +1,5 @@
 bookdown::pdf_book:
+  #pandoc_args: --top-level-division=chapter
   latex_engine: "xelatex"
   keep_tex: true
   includes:
